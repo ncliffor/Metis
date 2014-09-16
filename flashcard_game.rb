@@ -1,4 +1,5 @@
 require "./deck"
+require "./card"
 
 class FlashcardGame
 	def initialize(decks)
@@ -11,6 +12,7 @@ class FlashcardGame
 			deck = ask_user_which_deck
 			if deck
 				puts "We would play #{deck.name}"
+				deck.play
 			else
 				puts "exiting"
 				break
@@ -22,7 +24,7 @@ class FlashcardGame
 
 	def list_out_decks
 		@decks.each {|decks| puts decks.name}
-		end
+	end
 
 	def ask_user_which_deck
 		print "Which deck would you like? (leave blank to exit)> "
@@ -34,8 +36,16 @@ class FlashcardGame
 end
 
 decks = []
-decks << Deck.new("Spanish")
-decks << Deck.new("Japanese")
+
+spanish_cards = []
+spanish_cards << Card.new("Gato", "Cat")
+spanish_cards << Card.new("Perro", "Dog")
+decks << Deck.new("Spanish", spanish_cards)
+
+japanese_cards = []
+japanese_cards << Card.new("Neko", "Cat")
+japanese_cards << Card.new("Inu", "Dog")
+decks << Deck.new("Japanese", japanese_cards)
 
 
 flashcard_game = FlashcardGame.new(decks)
