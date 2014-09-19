@@ -8,7 +8,9 @@ class LockerState
 	def run
 		start_with_lockers_closed
 		students_go_through_lockers
-		puts "#{@open_or_closed}"
+		@open_or_closed.each_with_index do |line, index|
+			puts "#{index + 1} #{line}"
+		end
 	end
 	
 	private
@@ -31,13 +33,15 @@ class LockerState
 
 
 	def toggle_locker(index)
-		if @open_or_closed[index] == "Closed"
-			@open_or_closed[index] = "Open"
+		if @open_or_closed[index-1] == "Closed"
+			@open_or_closed[index-1] = "Open"
 		else
-			@open_or_closed[index] = "Closed"
+			@open_or_closed[index-1] = "Closed"
 		end
 	end
 end
 
 lockers_state = LockerState.new
 lockers_state.run
+
+

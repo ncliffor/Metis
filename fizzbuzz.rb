@@ -6,7 +6,7 @@ class FizzBuzz
 			elsif number % 3 == 0
 				puts "Fizz"
 			elsif number % 5 == 0
-				puts "Buzz"
+				puts "Buzz"@
 			else
 				puts number
 			end
