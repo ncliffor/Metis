@@ -20,9 +20,13 @@ class MusicDatabase
 	end
 
 	def populate_database(artist, track_name)
-		@artist_to_song = {artist => track_name}
-		puts @artist_to_song
+		if !@artist_to_song[artist]
+			@artist_to_song[artist] = []
+		end
+		@artist_to_song[artist] << track_name
+		# puts @artist_to_song
 	end
+
 
 end
 
