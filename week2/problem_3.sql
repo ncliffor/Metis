@@ -1,1 +1,1 @@
-SELECT name FROM images WHERE name ILIKE '%space%';
+SELECT * FROM images WHERE name ILIKE '%space%';

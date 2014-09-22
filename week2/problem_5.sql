@@ -1,1 +1,1 @@
-SELECT name, description FROM images WHERE description IS NOT NULL;
+SELECT * FROM images WHERE description IS NOT NULL;

@@ -1,1 +1,1 @@
-SELECT name FROM galleries ORDER BY name ASC;
+SELECT * FROM galleries ORDER BY name ASC;
