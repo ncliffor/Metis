@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <script>
+      function sayHello(){
+        console.log("greetings!");
+      }
+
+      function sayGoodbye(){
+        console.log("Bye!");
+        return false;
+      }
+
+      function printValue(){
+        console.log(document.getElementById('left').value);
+        return false;
+      }
+
+      function calculate(){
+        var leftValue = Number(document.getElementById('left').value);
+        var rightValue = Number(document.getElementById('right').value);
+        var operator = document.getElementById('operator').value;
+        var resultElement = document.getElementById('result');
+
+        if( operator === "+" ){
+        var result = leftValue + rightValue;
+        } else if( operator === "-"){
+        var result = leftValue - rightValue;
+        } else if( operator === "*"){
+        var result = leftValue * rightValue;
+        } else if( operator === "/"){
+        var result = leftValue / rightValue;
+        } else if( operator === "**"){
+        var result = Math.pow(leftValue, rightValue);
+        } else {
+          var result = "Math is hard...";
+        }
+        resultElement.innerText = result;
+        return false;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1 onclick="console.log('You clicked')">Calculator</h1>
+
+    <p id="result">No calculation yet</p>
+
+    <form onsubmit="return calculate();">
+      <input type="number" id="left" />
+      <input type="text" id="operator" />
+      <input type="number" id="right" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
