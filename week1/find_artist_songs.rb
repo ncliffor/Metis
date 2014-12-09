@@ -10,4 +10,3 @@ class FindArtistSongs
 
 end
 
-find_artist_songs = FindArtistSongs.new

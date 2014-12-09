@@ -3,11 +3,12 @@ require "CSV"
 class MusicDatabase
 
 	def initialize
-		@artist_to_song = {}		
+		@artist_to_song = {}
 	end
 
 	def read_database
 		set_artist_and_track_name
+		puts @artist_to_song
 	end
 	
 	def set_artist_and_track_name
@@ -24,7 +25,6 @@ class MusicDatabase
 			@artist_to_song[artist] = []
 		end
 		@artist_to_song[artist] << track_name
-		# puts @artist_to_song
 	end
 
 
